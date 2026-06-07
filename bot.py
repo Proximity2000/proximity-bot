@@ -179,7 +179,10 @@ BRANCH_1_FINAL = (
     "Но самое главное —\n"
     "ты перестанешь наблюдать со стороны и станешь частью одной из самых быстрорастущих индустрий мира.\n\n"
     "Если ты дочитал до этого места, значит тема уже тебя зацепила.\n\n"
-    "Добро пожаловать."
+    "Я тебе дам доступ к прошедшему закрытому эфиру где мы проводили презентацию по нашей экосистеме.\n"
+    "Обязательно посмотри её, там ребята всё по полочкам разложили для тебя.\n\n"
+    "Если после просмотра у тебя осталось желание двигаться дальше — нажимай на кнопку ниже и давай делать это вместе)\n"
+    "Если есть какие-либо вопросы, можешь написать мне тоже по кнопке ниже, всегда рад новым знакомствам)"
 )
 
 BRANCH_2 = (
@@ -221,7 +224,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_text(SCREEN_4, reply_markup=InlineKeyboardMarkup(kb))
 
     elif data == "s5":
-        kb = [[InlineKeyboardButton("💰 На чём будут зарабатывать в ближайшие годы?", callback_data="s6")]]
+        kb = [[InlineKeyboardButton("💸 Где сейчас будут зарабатывать?", callback_data="s6")]]
         await query.message.reply_text(SCREEN_5, reply_markup=InlineKeyboardMarkup(kb))
 
     elif data == "s6":
@@ -235,7 +238,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "s8":
         kb = [
             [InlineKeyboardButton("🎓 Хочу научиться владеть AI", callback_data="branch1")],
-            [InlineKeyboardButton("⚡ Хочу готовые AI-решения для жизни и бизнеса", callback_data="branch2")],
+            [InlineKeyboardButton("⚡ Хочу готовые решения", callback_data="branch2")],
         ]
         await query.message.reply_text(SCREEN_8, reply_markup=InlineKeyboardMarkup(kb))
 
@@ -245,9 +248,10 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif data == "branch1_final":
         kb = [
+            [InlineKeyboardButton("📹 YouTube", url="https://youtu.be/J3gRq1Lb17o")],
+            [InlineKeyboardButton("🎵 RuTube", url="https://rutube.ru/video/private/21ae4b99367e985e9fe99bb1746f1cbf/?p=FBZC8LGZbJG6X9KfX7PWYg")],
             [InlineKeyboardButton("🚀 Получить доступ к обучению", url="https://app.metabox.global/register?promo=2RKRWUR6")],
             [InlineKeyboardButton("✍️ Написать мне", url="https://t.me/Proximity_industries1")],
-            [InlineKeyboardButton("📢 Наш Telegram-канал", url="https://t.me/proximity_industries")],
         ]
         await query.message.reply_text(BRANCH_1_FINAL, reply_markup=InlineKeyboardMarkup(kb))
 
@@ -255,7 +259,6 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         kb = [
             [InlineKeyboardButton("⚡ Перейти на сайт Proximity Industries", url="https://proximity-industries.ru")],
             [InlineKeyboardButton("✍️ Написать мне", url="https://t.me/Proximity_industries1")],
-            [InlineKeyboardButton("📢 Наш Telegram-канал", url="https://t.me/proximity_industries")],
         ]
         await query.message.reply_text(BRANCH_2, reply_markup=InlineKeyboardMarkup(kb))
 
