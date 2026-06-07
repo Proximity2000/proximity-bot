@@ -244,11 +244,19 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_text(BRANCH_1, reply_markup=InlineKeyboardMarkup(kb))
 
     elif data == "branch1_final":
-        kb = [[InlineKeyboardButton("🚀 Получить доступ к обучению", url="https://app.metabox.global/register?promo=2RKRWUR6")]]
+        kb = [
+            [InlineKeyboardButton("🚀 Получить доступ к обучению", url="https://app.metabox.global/register?promo=2RKRWUR6")],
+            [InlineKeyboardButton("✍️ Написать мне", url="https://t.me/Proximity_industries1")],
+            [InlineKeyboardButton("📢 Наш Telegram-канал", url="https://t.me/proximity_industries")],
+        ]
         await query.message.reply_text(BRANCH_1_FINAL, reply_markup=InlineKeyboardMarkup(kb))
 
     elif data == "branch2":
-        kb = [[InlineKeyboardButton("⚡ Перейти на сайт Proximity Industries", url="https://proximity-industries.ru")]]
+        kb = [
+            [InlineKeyboardButton("⚡ Перейти на сайт Proximity Industries", url="https://proximity-industries.ru")],
+            [InlineKeyboardButton("✍️ Написать мне", url="https://t.me/Proximity_industries1")],
+            [InlineKeyboardButton("📢 Наш Telegram-канал", url="https://t.me/proximity_industries")],
+        ]
         await query.message.reply_text(BRANCH_2, reply_markup=InlineKeyboardMarkup(kb))
 
 
