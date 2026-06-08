@@ -1,4 +1,4 @@
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton, BotCommand
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
 
 TOKEN = "8856054903:AAFIwN62Q8sHc_mgwWInIPht72Wq6w9XDxE"
@@ -152,6 +152,9 @@ BRANCH_2 = (
 # Хэндлеры
 # ─────────────────────────────────────────────
 
+async def post_init(application):
+    await application.bot.set_my_commands([BotCommand("start", "🚀 Начать")])
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [[InlineKeyboardButton("🚀 Продолжить", callback_data="s2")]]
     await update.message.reply_text(SCREEN_1, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -234,7 +237,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Запуск
 # ─────────────────────────────────────────────
 
-app = ApplicationBuilder().token(TOKEN).build()
+app = ApplicationBuilder().token(TOKEN).post_init(post_init).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CallbackQueryHandler(button))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
