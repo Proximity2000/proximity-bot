@@ -1,7 +1,7 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton, BotCommand
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
 
-TOKEN = "8856054903:AAFIwN62Q8sHc_mgwWInIPht72Wq6w9XDxE"
+TOKEN = "8822430328:AAHa3QIRKnP3IlhCDvpyujyZaUif_ai-UUs"
 
 # ─────────────────────────────────────────────
 # Тексты экранов
